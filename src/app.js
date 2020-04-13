@@ -8,8 +8,6 @@ const forecast = require('./utils/forecast.js')
 const app = express()
 const port = process.env.PORT || 3000
 
-console.log('port value is ' + port)
-
 //  Define Paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -26,7 +24,7 @@ app.use(express.static(publicDirectoryPath))
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
-        name: 'Tushar Upadhyay'+port
+        name: 'Tushar Upadhyay'
     })
 })
 
