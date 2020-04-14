@@ -9,7 +9,7 @@ const forecast = (longitude, latitude, callback) => {
             callback('Unable to find location! Please try again', undefined)
         } 
         else {
-            callback(undefined, 'It is currently ' + (body.list[0].main.temp - 273) + ' degrees Celsius outside. The temperature feels like ' + (body.list[0].main.feels_like - 273) + ' degrees Celsius.\nHumidity is ' + body.list[0].main.humidity + '%.')
+            callback(undefined, 'It is currently ' + (body.list[0].main.temp - 273).toFixed(2) + ' degrees Celsius outside. The temperature feels like ' + (body.list[0].main.feels_like - 273).toFixed(2) + ' degrees Celsius.\nHumidity is ' + body.list[0].main.humidity.toFixed(2) + '%.')
         }
     })    
 }
